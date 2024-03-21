@@ -16,7 +16,7 @@ while(count<11){
         console.log("Your guess is too low")
     }
     else{
-        console.log("Congratulations your guess is correc")
+        console.log("Congratulations your guess is correct")
         break
     }
 
