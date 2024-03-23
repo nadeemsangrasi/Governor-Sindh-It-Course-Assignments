@@ -22,7 +22,12 @@ while(count<10){
         }
     }
     else{
+<<<<<<< HEAD
         console.log(chalk.redBright(`Please enter valid number\nyour provided value is ${guessNumber.guess}`))
+=======
+        console.log("Congratulations your guess is correct")
+        break
+>>>>>>> b1c5aa8888ca3bb81372b427205002e6cdbd969c
     }
 
 }
