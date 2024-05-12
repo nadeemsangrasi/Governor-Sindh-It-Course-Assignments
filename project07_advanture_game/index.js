@@ -1,9 +1,11 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 class AdvantureGame {
     name;
     score = 0;
     health = 100;
+    drink = 0;
     constructor(name) {
         this.name = name;
     }
@@ -18,6 +20,10 @@ class AdvantureGame {
     increaseHealth() {
         this.health = 100;
     }
+    increaseDrink() {
+        let drink = this.drink += 1;
+        this.drink = drink;
+    }
 }
 console.log(chalk.yellow("Welcome to advanture game"));
 let get_player_name = await inquirer.prompt({ name: "playerName", message: chalk.bold("Enter your name"), type: "input" });
@@ -31,8 +37,8 @@ let skelaton = async () => {
         if (randomNum > 0) {
             player.decreaseHealth();
             oponent.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
-            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
+            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)} `);
             if (player.health <= 0) {
                 console.log(chalk.red(`You lose, Better luck next time`));
                 process.exit();
@@ -41,7 +47,7 @@ let skelaton = async () => {
         else {
             oponent.decreaseHealth();
             player.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
             console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
             if (oponent.health <= 0) {
                 console.log(chalk.green(`congratularions You win`));
@@ -51,6 +57,7 @@ let skelaton = async () => {
     };
     let drinkPortion = () => {
         player.increaseHealth();
+        player.increaseDrink();
         console.log(chalk.green(`You drink health ${player.health}`));
     };
     let runForLife = () => {
@@ -78,8 +85,8 @@ let alien = async () => {
         if (randomNum > 0) {
             player.decreaseHealth();
             oponent.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
-            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
+            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)} `);
             if (player.health <= 0) {
                 console.log(chalk.red(`You lose, Better luck next time`));
                 process.exit();
@@ -88,7 +95,7 @@ let alien = async () => {
         else {
             oponent.decreaseHealth();
             player.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
             console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
             if (oponent.health <= 0) {
                 console.log(chalk.green(`congratularions You win`));
@@ -98,6 +105,7 @@ let alien = async () => {
     };
     let drinkPortion = () => {
         player.increaseHealth();
+        player.increaseDrink();
         console.log(chalk.green(`You drink health ${player.health}`));
     };
     let runForLife = () => {
@@ -125,8 +133,8 @@ let zombie = async () => {
         if (randomNum > 0) {
             player.decreaseHealth();
             oponent.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
-            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
+            console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)} `);
             if (player.health <= 0) {
                 console.log(chalk.red(`You lose, Better luck next time`));
                 process.exit();
@@ -135,7 +143,7 @@ let zombie = async () => {
         else {
             oponent.decreaseHealth();
             player.increaseScore();
-            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)}`);
+            console.log(`name:${chalk.yellow(player.name)} score:${chalk.yellow(player.score)} health:${chalk.yellow(player.health)} drink:${chalk.yellow(player.drink)}`);
             console.log(`oponent:${chalk.yellow(oponent.name)} score:${chalk.yellow(oponent.score)} health:${chalk.yellow(oponent.health)}`);
             if (oponent.health <= 0) {
                 console.log(chalk.green(`congratularions You win`));
@@ -145,6 +153,7 @@ let zombie = async () => {
     };
     let drinkPortion = () => {
         player.increaseHealth();
+        player.increaseDrink();
         console.log(chalk.green(`You drink health ${player.health}`));
     };
     let runForLife = () => {

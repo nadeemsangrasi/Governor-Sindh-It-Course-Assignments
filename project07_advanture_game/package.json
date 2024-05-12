@@ -1,6 +1,6 @@
 {
-  "name": "nadeem-student-management-system-07",
-  "version": "1.0.2",
+  "name": "my-advanture-game-08",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nadeem Khan",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",
     "inquirer": "^9.2.20"
